@@ -1,0 +1,16 @@
+__pycache__
+db.sqlite3
+*.[oa]
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+requirements
+local.py
+Desktop.ini
+ENV

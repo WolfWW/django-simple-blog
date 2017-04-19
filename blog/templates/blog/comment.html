@@ -1,0 +1,25 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<body>
+<hr />
+{% for comment in comment_list %}
+    {{ comment.username }}
+    {{ comment.created_time }}
+    {{ comment.content }}
+<a href="">回复</a>
+<hr />
+{% endfor %}
+<h1>评论</h1>
+<form method="post" action="{% url 'blog:comment' article.pk %}">
+    {% csrf_token %}
+    {% for field in form %}
+        {{ field }}
+        <br>
+        <br>
+    {% endfor %}
+<button type="submit">发布</button>
+</form>
+<hr />
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+    搜索
+{% endblock %}
+{% block body %}
+
+                            <article>
+                                <h2>搜索<br></h2>
+                                    {%if errors%}
+                                        <ul style='color:red;'>
+                                            {%for error in errors%}
+                                                <li>{{error}}</li>
+                                            {%endfor%}
+                                        </ul>
+                                    {%endif%}
+                                    <form action="" method="get">    
+                                        <input type="text" name="q">
+                                        <input type="submit" value="Search">
+                                    </form>
+                                <div class="clear"></div>
+                                <hr>
+                            </article>
+
+
+                        {% for article in article_list%}
+                            <article>
+                                <h2><a href="{% url 'blog:detail' article.pk %}">{{article.title}}</a><br></h2>
+                                <p class="info">{{article.created_time}} | {{article.category}}</p>
+                                <div class="clear"></div>
+                            </article>
+                        {% endfor %}
+
+
+
+{% endblock %}

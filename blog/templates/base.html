@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html crossriderapp2258="true">
+    <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}" />
+		<!-- title -->
+        <title>{% block title %}Wolf's House{% endblock %}</title>
+
+		<!-- meta -->
+		<meta charset="UTF-8">
+
+		<!-- links -->
+		<!--link rel="stylesheet" type="text/css" media="screen" href="./css/style.css"-->
+
+		<!-- scripts -->
+
+		<!-- IE Hacks -->
+		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    </head>
+    <body class="home blog">
+     
+    	<!-- header -->
+    	<header>
+    		<div id="light">
+	    		<div class="container_16">
+	    			<h1 class="grid_8"><a href=" {% url 'blog:index' %}">Wolf &nbsp;House</a></h1>
+					<nav class="grid_8">
+					        <ul id="menu-menu" class="menu"><li><a href=" {% url 'blog:index' %}">首页</a></li>
+							<li><a href=" {% url 'blog:all' %}">所有博文</a></li>
+                            <li><a href=" {% url 'blog:search' %}">搜索</a></li>
+							<!-- 还没写html li><a href="#">联系我</a></li-->
+							</ul>					
+                    </nav>
+	    		</div>
+			</div>
+    	</header>
+
+
+		<!-- wrapper -->
+		<div id="wrapper">
+			<div class="container_16">
+				<section id="posts" class="prefix_1 grid_9">
+                     {% block body %}{% endblock body%}
+				</section>
+                
+				<aside class="prefix_1 grid_5">
+					<div class="clear"></div>
+                    <hr>
+                    
+					<!-- 分类-->
+					<h4>文章分类</h4>
+					<ul class="categories">
+                        {% for category in category_list%}
+                            <li><a href="{% url 'blog:category' category.pk %}">{{category.category}}</a></li>
+                        {% endfor %}
+
+					</ul>
+					<div class="clear"></div>
+					<hr>
+
+					<!-- 标签 -->
+					<h4>标签</h4>
+					<ul class="categories">
+                        {% for tag in tag_list%}
+                            <li><a href="{% url 'blog:tag' tag.pk %}">{{tag.tag}}</a></li>
+                        {% endfor %}
+					</ul>
+					<div class="clear"></div>
+                    <hr>
+
+                </aside>
+
+
+            </div>
+
+        </div>
+		<footer>
+			<section id="footer_content">
+
+			</section>
+			<section id="powered">
+				<div class="container_12">
+					<p class="grid_10">© 2017 Wolf's House</p>
+					<p class="grid_2"><a class="top" href="#">▲ 回到顶部</a></p>
+				</div>
+			</section>
+		</footer>
+    </body>
+</html>
