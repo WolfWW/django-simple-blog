@@ -14,7 +14,7 @@ class Article(models.Model):
 		)
 
 	#创建文章的标题、正文、创建时间、文章状态、分类等属性
-    title = models.CharField('标题',max_length=20)
+    title = models.CharField('标题',max_length=50)
     text = models.TextField('正文',)
     created_time = models.DateTimeField('创建时间',auto_now_add=True)
     #auto_now_add在对象创建时默认使用当前时间
@@ -36,7 +36,7 @@ class Article(models.Model):
 
 #创建分类模型		
 class Category(models.Model):
-    category = models.CharField('分类',max_length=10)
+    category = models.CharField('分类',max_length=30)
 	
     def __str__(self):
 	    return self.category
@@ -50,7 +50,7 @@ class Tag(models.Model):
         
 #创建评论模型
 class Comment(models.Model):
-    username = models.CharField('昵称',max_length=10)
+    username = models.CharField('昵称',max_length=30)
     content = models.TextField('评论内容')
     created_time = models.DateTimeField('评论时间',auto_now_add=True)
     article = models.ForeignKey(Article,verbose_name='文章',on_delete=models.CASCADE)
