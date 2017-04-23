@@ -75,9 +75,9 @@ textarea {
 }
 
 blockquote {
-    font-style: italic;
-    padding-left: 30px;
-    background: url('../images/quote.png') no-repeat top left;
+    padding-left: 20px;
+    border-left: 5px solid #ccc;
+    background-color:#f1f1f1;
 }
 
 quote:before, quote:after {content: '"';}
@@ -85,29 +85,32 @@ quote:before, quote:after {content: '"';}
 /* 02. Text             */
 h1, h2, h3, h4, h5, h6 {
 	color: #2d2d2d;
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 2.4em;
+	font-family: "华文中宋",Georgia, "Times New Roman", Times, serif;
+	font-size: 2.0em;
 	text-align: justify;
 	margin: 20px 0;
 }
 h4,h5 {
-	margin: 35px 0 20px 10px;
+	margin: 25px 0 20px 10px;
 }
 
 p {
 	color: #111;
+    font-family:"黑体",Arial, Helvetica, sans-serif;
 	font-size: 1.5em;
-	line-height: 1.5em;
+	line-height: 150%;
 	margin-top: 15px;
+    text-indent:2em;
 }
 
 a {
-	font-weight: bold;
-	color: #111;
+	font-weight: 500;
+	color: #3366FF;
 }
 
 code, pre {
-    font-size: 12PX;
+    font-size: 14PX;
+    line-height:130%;
 }
 pre {
     background-color: #fafafa;
@@ -127,8 +130,8 @@ header {
 	width: 100%;
 }
 nav {
-	font-family: Verdana, sans-serif;
-	font-size: 1.8em;
+	font-family:"Comic Sans MS", cursive, Verdana, sans-serif;
+	font-size: 2.2em;
 	line-height: 1.8em;
 	padding-top: 70px;
 	text-align: right;
@@ -173,7 +176,7 @@ footer {
 			}
 	/* 03.02 Nav */
 	nav{}
-        nav ul { float: right; }
+        nav ul {float: right; }
             nav ul li { list-style-type: none; float: left; }
 		nav a {
 			color: white;
@@ -200,7 +203,7 @@ footer {
 
 		/* 03.03.01 Section */
 		section#posts{}
-			article{ position: relative; margin-bottom: 80px; }
+			article{ position: relative; margin-bottom: 50px; }
                 article.page h2 { background: url('../images/hr.png') repeat-x bottom left; padding-bottom: 15px; }
 				    article h2:hover { text-shadow: 2px 2px 4px #999; }
 					   article h2 a { color: #2d2d2d; text-decoration: none; }
@@ -420,7 +423,7 @@ footer {
 
 
 		/* 03.03.02 Aside */
-		aside { color: #2d2d2d; }
+		aside { color: green; }
 			#search {
 				background: #f7f7f7 url('../images/search.png') no-repeat 10px center;
 				border: none;
@@ -439,14 +442,19 @@ footer {
 				box-shadow: 1px 1px 2px #999 inset;
 			}
 
-			aside ul, ul.categories, ul.recent_comments, ul.blogroll {
+			aside ul, ul.categories,ul.recent_comments, ul.blogroll {
 				font-size: 1.4em;
 				line-height: 2.2em;
 				list-style-position: inside;
 				list-style-type: square;
 			}
+            aside ul.tags{
+                line-height:1.2em;
+                list-style-type:none;
+                border-style:outset;               
+            }
                 aside ul li {
-					float: none;
+					float: right;
 					margin-left: 15px;
                 }
                     aside ul li a {
@@ -460,6 +468,19 @@ footer {
 					width: 125px;
 					padding-left: 15px;
 					margin-left: 0px;
+				}
+				ul.tags li{
+					float: left;
+                    border:1px solid;
+                    padding:3px;
+                    background:#dddddd;
+                    border-bottom-left-radius:1.5em;
+                    border-bottom-right-radius:1.5em;
+                    border-top-left-radius:1.5em;
+                    border-top-right-radius:1.5em;
+					width: auto;
+					margin-left: 2px;
+                    margin-right: 2px;
 				}
 					ul.categories li a, ul.blogroll li a {
 						color: #2d2d2d;
@@ -495,7 +516,7 @@ footer {
 			aside hr {
 				background: url('../images/hr.png') no-repeat center;
 				border: none;
-				height: 25px;
+				height: 15px;
 			}
 
 			section#rss, section#twitter {
@@ -543,8 +564,8 @@ footer {
 	footer {}
 		section#footer_content {
 			background: url('../images/footer_content.png') repeat;
-			margin-top: 30px;
-			padding-bottom: 20px;
+			margin-top: 8px;
+			padding-bottom: 25px;
 		}
 			section#footer_content h4, section#footer_content h5 {
 				color:white;

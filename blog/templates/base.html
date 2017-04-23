@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-<html crossriderapp2258="true">
+<html>
     <head>
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}" />
+    <script type="text/javascript" src="{% static 'blog/js/cssrefresh.js' %}"></script>
 		<!-- title -->
         <title>{% block title %}Wolf's House{% endblock %}</title>
 
@@ -48,7 +49,7 @@
                     <hr>
                     
 					<!-- 分类-->
-					<h4>文章分类</h4>
+					<h4>分类</h4>
 					<ul class="categories">
                         {% for category in category_list%}
                             <li><a href="{% url 'blog:category' category.pk %}">{{category.category}}</a></li>
@@ -60,7 +61,7 @@
 
 					<!-- 标签 -->
 					<h4>标签</h4>
-					<ul class="categories">
+					<ul class="tags">
                         {% for tag in tag_list%}
                             <li><a href="{% url 'blog:tag' tag.pk %}">{{tag.tag}}</a></li>
                         {% endfor %}
