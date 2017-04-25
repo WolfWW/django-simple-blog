@@ -50,8 +50,9 @@ class Tag(models.Model):
         
 #创建评论模型
 class Comment(models.Model):
-    username = models.CharField('昵称',max_length=30)
-    content = models.TextField('评论内容')
+    username = models.CharField(verbose_name='您的昵称',max_length=30)
+    useremail = models.EmailField(verbose_name='邮件地址',max_length=100,blank=True)
+    content = models.TextField(verbose_name='评论内容')
     created_time = models.DateTimeField('评论时间',auto_now_add=True)
     article = models.ForeignKey(Article,verbose_name='文章',on_delete=models.CASCADE)
     

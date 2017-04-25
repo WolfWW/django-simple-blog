@@ -4,13 +4,22 @@
 from django import forms
 from .models import Article,Comment
 
-#ÆÀÂÛ±íµ¥
+#è¯„è®ºè¡¨å•
 class CommentForm(forms.ModelForm):
 
     class Meta:
-        model = Comment #ÉèÖÃ±íµ¥form¹ØÁªµÄÄ£ĞÍmodel
-        fields = ('username','content') #ÉèÖÃÔÚÄ£°åÖĞäÖÈ¾µÄ×Ö¶Î
+        model = Comment #è®¾ç½®è¡¨å•formå…³è”çš„æ¨¡å‹model
+        fields = ['username','useremail','content'] #è®¾ç½®åœ¨æ¨¡æ¿ä¸­æ¸²æŸ“çš„å­—æ®µ
         
-#ËÑË÷±íµ¥
+        widgets = {
+            'username':forms.TextInput(attrs={
+                'placeholder':"æ‚¨çš„æ˜µç§°ï¼ˆå¿…å¡«ï¼‰",}),
+            'useremail':forms.TextInput(attrs={
+                'placeholder':"å¦‚éœ€è¦é‚®ä»¶å›å¤è¯·è¾“å…¥ï¼ˆé€‰å¡«ï¼‰",}),
+            'content':forms.Textarea(attrs={
+                'placeholder':"è¯„è®ºå†…å®¹ï¼ˆå¿…å¡«ï¼‰",}),
+        }
+        
+#æœç´¢è¡¨å•
 #class SearchForm(forms.Form):
-#    search_entry = forms.CharField(label='ÊäÈëÎÄÕÂ±êÌâ¹Ø¼ü×Ö')
+#    search_entry = forms.CharField(label='è¾“å…¥æ–‡ç« æ ‡é¢˜å…³é”®å­—')

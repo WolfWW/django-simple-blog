@@ -29,18 +29,18 @@
 
 /* 01. Basic Elements   */
 body {
-	background: url("{% static 'blog/images/bg.png' %}") repeat;
+	background: url('../images/bg.png') repeat;
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 65%;
 }
 
 label {
-    font-size: 1.2em;
-    margin: 5px 0;
+    font-size: 1em;
+    vertical-align:top;
 }
 
 input {
-    width: 150px;
+    width: 200px;
     border: 1px solid #666;
     background-color: #f7f7f7;
     padding: 5px;
@@ -100,7 +100,6 @@ p {
 	font-size: 1.5em;
 	line-height: 150%;
 	margin-top: 15px;
-    text-indent:2em;
 }
 
 a {
@@ -109,16 +108,18 @@ a {
 }
 
 code, pre {
-    font-size: 14PX;
+    font-size: 0.8em;
     line-height:130%;
+    overflow-x:auto;
 }
 pre {
     background-color: #fafafa;
     display: block;
     padding: 10px 20px;
     border: 1px solid #ccc;
-    width: 480px;
+    width: 80%;
     margin: 20px 0;
+    overflow-x:auto;
 }
 
 
@@ -134,14 +135,14 @@ nav {
 	font-size: 2.2em;
 	line-height: 1.8em;
 	padding-top: 70px;
-	text-align: right;
+	text-align: center;
 }
 #wrapper {
 	background: url('../images/wrapper.png') repeat-y center; /* IE */
 	background: url('../images/top_wrapper.png') no-repeat center top,
 				url('../images/bottom_wrapper.png') no-repeat center bottom,
 				url('../images/wrapper.png') repeat-y center;
-
+    background-size:80%;
 	margin-top: 50px;
 	padding: 50px 0;
 	min-height: 1200px;
@@ -159,7 +160,8 @@ footer {
 		header #light {
 			background: url('../images/light.png') no-repeat bottom center;
 			height: 150px;
-			margin: 0 auto;
+			margin-left: 12%;
+            margin-right: 1%;
 		}
 
 		header h1 {
@@ -178,6 +180,13 @@ footer {
 	nav{}
         nav ul {float: right; }
             nav ul li { list-style-type: none; float: left; }
+        nav p {
+            float:left;
+            font-family: "Eras Bold Itc","Comic Sans MS",cursive,Georgia, "Times New Roman", Times, serif;
+            font-size:1em;
+            color:#CCCCCC;
+            margin: 5% 0 0 5%;
+            }
 		nav a {
 			color: white;
 			font-weight: bold;
@@ -202,7 +211,7 @@ footer {
 	#wrapper{}
 
 		/* 03.03.01 Section */
-		section#posts{}
+		section#posts{margin-left:10%}
 			article{ position: relative; margin-bottom: 50px; }
                 article.page h2 { background: url('../images/hr.png') repeat-x bottom left; padding-bottom: 15px; }
 				    article h2:hover { text-shadow: 2px 2px 4px #999; }
@@ -449,7 +458,7 @@ footer {
 				list-style-type: square;
 			}
             aside ul.tags{
-                line-height:1.2em;
+                line-height:1.4em;
                 list-style-type:none;
                 border-style:outset;               
             }
@@ -479,8 +488,7 @@ footer {
                     border-top-left-radius:1.5em;
                     border-top-right-radius:1.5em;
 					width: auto;
-					margin-left: 2px;
-                    margin-right: 2px;
+					margin: 2px 2px 2px 2px;
 				}
 					ul.categories li a, ul.blogroll li a {
 						color: #2d2d2d;
@@ -514,7 +522,7 @@ footer {
 
 
 			aside hr {
-				background: url('../images/hr.png') no-repeat center;
+				background: url('../images/hr.png') repeat-x center;
 				border: none;
 				height: 15px;
 			}
